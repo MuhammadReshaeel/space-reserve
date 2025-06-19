@@ -32,6 +32,12 @@ export const getRoomColors = (status: RoomStatus) => {
         stroke: '#ea580c', // orange border
         strokeWidth: 3,
       };
+    case 'available':
+      return {
+        fill: '#f0fdf4', // very light green
+        stroke: '#22c55e', // green border
+        strokeWidth: 2,
+      };
     default:
       return {
         fill: '#f3f4f6', // gray
@@ -71,5 +77,11 @@ export const legendItems: LegendItem[] = [
     label: 'Pending Requests',
     color: '#ffffff',
     borderColor: '#ea580c',
+  },
+  {
+    status: 'available',
+    label: 'Available spaces',
+    color: '#f0fdf4',
+    borderColor: '#22c55e',
   },
 ]; 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FloorMapKonvaPage from './pages/FloorMapKonvaPage';
+import FloorMapSVGPage from './pages/FloorMapSVGPage';
 import './App.css';
 
 const App: React.FC = () => {
@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
       {/* Main content */}
       <main className="relative">
-        <FloorMapKonvaPage 
+        <FloorMapSVGPage 
           showMobileLegend={showMobileLegend} 
           setShowMobileLegend={setShowMobileLegend} 
         />

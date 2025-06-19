@@ -1,4 +1,4 @@
-export type RoomStatus = 'office' | 'forecast' | 'hoteling' | 'vacant' | 'pending';
+export type RoomStatus = 'office' | 'forecast' | 'hoteling' | 'vacant' | 'pending' | 'available';
 
 export interface Room {
   id: string;
@@ -8,6 +8,9 @@ export interface Room {
   width: number;
   height: number;
   status: RoomStatus;
+  capacity?: number;
+  equipment?: string[];
+  description?: string;
 }
 
 export interface LegendItem {
