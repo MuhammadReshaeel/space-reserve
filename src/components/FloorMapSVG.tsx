@@ -89,7 +89,13 @@ const FloorMapSVG: React.FC<FloorMapSVGProps> = ({
         setSvgError(null);
         setSvgLoaded(false);
 
-        const svgUrl = `https://app.devttest.com/space-reserve-mtworks/${svgFileName}`;
+        // Use local path for development, production URL for production
+        const isLocalDevelopment = process.env.NODE_ENV === 'development' || window.location.hostname === 'localhost';
+        const svgUrl = isLocalDevelopment 
+          ? `/${svgFileName}` 
+          : `https://app.devttest.com/space-reserve-mtworks/${svgFileName}`;
+        
+        console.log('Loading SVG from:', svgUrl);
         const response = await fetch(svgUrl);
         if (!response.ok) {
           throw new Error(`Failed to load SVG: ${response.statusText}`);
